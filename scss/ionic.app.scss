@@ -21,3 +21,23 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.login-container {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444), color-stop(100%, #111));
+    background: -webkit-linear-gradient(top, #444 0%, #111 100%);
+}
+
+.login-container > .button-row img {
+    max-width: 80%;
+}
+
+.login-container > .header {
+    -webkit-flex: 4;
+    padding-top: 20%;
+}
+
+.login-container > .facebook-btn {
+  padding: 0;
+}

@@ -15,9 +15,16 @@ var paths = {
 
 gulp.task('default', ['watch']);
 
+gulp.task('watch', function() {
+  gulp.start('sass', 'dev_config');
+  gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.configFiles, ['dev_config']);
+});
+
 gulp.task('build', function() {
   gulp.start('sass', 'prod_config');
 });
+
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -42,11 +49,6 @@ gulp.task('prod_config', function() {
   gulp.src('./config.js')
     .pipe(preprocess({context: {ENV: 'PRODUCTION'}}))
     .pipe(gulp.dest('./www/js/'));
-});
-
-gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
-  gulp.watch(paths.configFiles, ['dev_config']);
 });
 
 gulp.task('install', ['git-check'], function() {

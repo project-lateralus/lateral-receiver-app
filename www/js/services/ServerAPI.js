@@ -1,8 +1,8 @@
 angular.module('LateralApp')
 
-.factory('ServerAPI', function() {
+.factory('ServerAPI', function(config) {
 
-  var HOST = 'http://1cc278c7.ngrok.io';
+  var HOST = config.server.host;
 
   var app = feathers()
   .configure(feathers.rest(HOST).jquery(jQuery))

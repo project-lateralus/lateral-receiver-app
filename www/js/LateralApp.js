@@ -1,7 +1,13 @@
 angular.module('LateralApp', ['ionic', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, config) {
   $ionicPlatform.ready(function() {
+    if (!config || R.isEmpty(config)) {
+      console.error('There is no configuration set.');
+    }
+    else if (config.env === 'DEVELOPMENT') {
+      console.log('config: ', config);
+    }
 
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

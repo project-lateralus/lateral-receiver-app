@@ -10,7 +10,7 @@ angular.module('LateralApp')
 .constant('config', {
   env: 'DEVELOPMENT',
   server: {
-    host: 'http://1cc278c7.ngrok.io'
+    url: 'http://1cc278c7.ngrok.io'
   }
 });
 // @endif
@@ -18,7 +18,7 @@ angular.module('LateralApp')
 .constant('config', {
   env: 'PRODUCTION',
   server: {
-    host: 'https://lateral.social'
+    url: 'https://lateral.social'
   }
 });
 // @endif

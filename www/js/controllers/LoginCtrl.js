@@ -1,11 +1,11 @@
 angular.module('LateralApp')
 
-.controller('LoginCtrl', function($scope, $rootScope, $cordovaInAppBrowser, $state, ServerAPI) {
+.controller('LoginCtrl', function($scope, $rootScope, $cordovaInAppBrowser, $state, RestAPI) {
 
   // TODO include logic for already logged in user, and error cases
 
   $scope.loginFacebook = function() {
-    $cordovaInAppBrowser.open(ServerAPI.FACEBOOK_AUTH_URL, '_blank', {location: 'no'})
+    $cordovaInAppBrowser.open(RestAPI.FACEBOOK_AUTH_URL, '_blank', {location: 'no'})
     .catch(function(event) {
       returnToLoginAndCloseWindow();
     });
@@ -41,7 +41,7 @@ angular.module('LateralApp')
       // set especial localStorage token for Feathers client http://docs.feathersjs.com/authentication/readme.html#options
       window.localStorage.setItem('feathers-jwt', token);
 
-      ServerAPI.app.authenticate()
+      RestAPI.app.authenticate()
       .then(function(result){
         // redirect to dashboard
         $state.go('tab.status');

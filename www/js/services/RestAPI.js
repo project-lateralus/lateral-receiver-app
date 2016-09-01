@@ -1,6 +1,6 @@
 angular.module('LateralApp')
 
-.factory('ServerAPI', function(config) {
+.factory('RestAPI', function(config) {
 
   var HOST = config.server.url;
 

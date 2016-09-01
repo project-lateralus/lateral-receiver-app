@@ -1,9 +1,9 @@
 // Example file for environment variables configuration.
 // Usage:
-// 1) just clone this file and change the name to config.js
+// 1) clone this file and change the name to config.js
 // 2) put all the values you want in both environments
 // 3) run `gulp watch`, the real file will be generated in ./www/js/config.js
-// Notes: ./config.js and ./www/js/config.js will be ignored by git.
+// Note: ./config.js and ./www/js/config.js will be ignored by git.
 angular.module('LateralApp')
 
 // @if ENV == 'DEVELOPMENT'
